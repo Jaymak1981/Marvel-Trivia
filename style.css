@@ -1,0 +1,112 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyH6gMxaX8YrlcSpjjiXRbfLkY_ORPLvkjD2iN3zjZw-X-Ko-3zA&s');
+    background-color: black;
+    margin: 0;
+    padding: 0;
+
+}
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    margin: 50px;
+    font-size: 70px;
+}
+
+.trivia_wrapper {
+    height: 400px;
+    width: 650px;
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.trivia_wrapper .question {
+    min-height: 50px;
+    background-color: red;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.trivia_wrapper .options {
+    float: left;
+}
+
+.trivia_wrapper .options ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.trivia_wrapper .options ul li {
+    display: inline-block;
+    background-color: bisque;
+    width: 47%;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0px 3px 0px grey;
+    text-align: center;
+}
+
+.trivia_wrapper .options ul li.correct {
+    background-color: green;
+    box-shadow: 0px 3px 0px grey;
+}
+
+.trivia_wrapper .options ul li.wrong {
+    background-color: red;
+    box-shadow: 0px 3px 0px grey;
+}
+
+
+.trivia_wrapper .score {
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.trivia_wrapper .score .next {
+    width: 40%;
+    float: left;
+}
+
+.trivia_wrapper .score .next button {
+    padding: 10px 30px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.trivia_wrapper .score .score-card {
+    width: 60%;
+    float: left;
+}
+
+.trivia_wrapper .score .score-card {
+    font-size: 20px;
+    color: black;
+    line-height: 50px;
+}
+
+.trivia_wrapper .score .score-card span {
+    background-color: royalblue;
+    padding: 5px 20px;
+    border-radius: 8px;
+    color: white;
+}
