@@ -6,10 +6,9 @@ const button = document.getElementById('next');
 
 const triviaBox = document.getElementById('questionBox');
 
-const score = document.getElementById('scoreCard');
-
-
 let currentQuestion = 0;
+
+let score = 0;
 
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
@@ -21,6 +20,7 @@ opt1.addEventListener('click', checkAnswer);
 opt2.addEventListener('click', checkAnswer);
 opt3.addEventListener('click', checkAnswer);
 opt4.addEventListener('click', checkAnswer);
+
 
 const questions = [
   {
@@ -181,6 +181,10 @@ function load() {
   opt2.innerHTML = questions[currentQuestion].options[1];
   opt3.innerHTML = questions[currentQuestion].options[2];
   opt4.innerHTML = questions[currentQuestion].options[3];
+  opt1.style.backgroundColor = 'white';
+  opt2.style.backgroundColor = 'white';
+  opt3.style.backgroundColor = 'white';
+  opt4.style.backgroundColor = 'white';
 };
 
 load();
@@ -188,17 +192,22 @@ load();
 function next() {
   currentQuestion++;
   load();
+
 };
 
 function checkAnswer(evt) {
   let question = questions[currentQuestion]; {
         if (evt.target.id === question.answer) {
-        alert('correct');
+          evt.target.style.backgroundColor = '#00ff00'; 
+          score += 1;
+          document.querySelector('#scoreCard').innerText = score;
+          // alert('correct');
     } else {
-        alert('Try Again');
+          evt.target.style.backgroundColor = '#ff5050';
+        // alert('Try Again');
     };
 }
-  console.log(evt.target.id === question.answer);
+  // console.log(evt.target.id === question.answer);
 };
 
 
