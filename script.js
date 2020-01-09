@@ -1,10 +1,13 @@
+const li = document.getElementById('li');
+
 const ul = document.getElementById('ul');
 
 const button = document.getElementById('next');
 
 const triviaBox = document.getElementById('questionBox');
 
-const score =document.getElementById('scoreCard');
+const score = document.getElementById('scoreCard');
+
 
 let currentQuestion = 0;
 
@@ -178,22 +181,24 @@ function load() {
   opt2.innerHTML = questions[currentQuestion].options[1];
   opt3.innerHTML = questions[currentQuestion].options[2];
   opt4.innerHTML = questions[currentQuestion].options[3];
-}
+};
 
 load();
 
 function next() {
   currentQuestion++;
   load();
-}
+};
 
 function checkAnswer(evt) {
-  let question = questions[currentQuestion];
-    if (answer = questions[currentQuestion]) {
+  let question = questions[currentQuestion]; {
+        if (evt.target.id === question.answer) {
         alert('correct');
     } else {
         alert('Try Again');
-    }
-  
-  console.log(evt.target.id === question.answer);
+    };
 }
+  console.log(evt.target.id === question.answer);
+};
+
+

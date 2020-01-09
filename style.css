@@ -66,12 +66,12 @@ h1 {
 
 .trivia_wrapper .options ul li.correct {
     background-color: green;
-    box-shadow: 0px 3px 0px grey;
+   
 }
 
 .trivia_wrapper .options ul li.wrong {
     background-color: red;
-    box-shadow: 0px 3px 0px grey;
+    
 }
 
 
@@ -111,4 +111,8 @@ h1 {
     border-radius: 8px;
     color: white;
     padding: 5px 20px;
+}
+
+a:hover {
+    background-color: white;
 }
