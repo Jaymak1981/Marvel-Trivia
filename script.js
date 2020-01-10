@@ -10,6 +10,8 @@ let currentQuestion = 0;
 
 let score = 0;
 
+let isQuestionAnswered = false;
+
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
@@ -192,11 +194,13 @@ load();
 function next() {
   currentQuestion++;
   load();
+  isQuestionAnswered = false;
 
 };
 
 function checkAnswer(evt) {
-  let question = questions[currentQuestion]; {
+  if (isQuestionAnswered === false) {
+    let question = questions[currentQuestion]; {
         if (evt.target.id === question.answer) {
           evt.target.style.backgroundColor = '#00ff00'; 
           score += 1;
@@ -206,6 +210,8 @@ function checkAnswer(evt) {
           evt.target.style.backgroundColor = '#ff5050';
         // alert('Try Again');
     };
+    isQuestionAnswered = true;
+  }
 }
   // console.log(evt.target.id === question.answer);
 };

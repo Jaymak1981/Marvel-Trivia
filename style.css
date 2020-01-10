@@ -41,7 +41,7 @@ h1 {
 }
 
 .trivia_wrapper .options {
-    float: left;
+    width: 100%;
 }
 
 .trivia_wrapper .options ul {
@@ -50,6 +50,7 @@ h1 {
     justify-content: space-between;
     list-style: none;
     padding: 0px;
+    width: 100%;
 }
 
 .trivia_wrapper .options ul li {
@@ -62,6 +63,16 @@ h1 {
     padding: 15px;
     text-align: center;
     width: 49%;
+    cursor: pointer;
+}
+
+#next {
+    background-color: red;
+    border-radius: 8px;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    font-size: 2rem;
 }
 
 
@@ -98,7 +109,7 @@ h1 {
 }
 
 .trivia_wrapper .score .score-card span {
-    background-color: royalblue;
+    background-color: rgba(255, 0, 0, 0.952);
     border-radius: 8px;
     color: white;
     padding: 5px 20px;
