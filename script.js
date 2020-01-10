@@ -12,6 +12,8 @@ let score = 0;
 
 let isQuestionAnswered = false;
 
+let totalScore = document.querySelector('.finalScore');
+
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
@@ -22,7 +24,6 @@ opt1.addEventListener('click', checkAnswer);
 opt2.addEventListener('click', checkAnswer);
 opt3.addEventListener('click', checkAnswer);
 opt4.addEventListener('click', checkAnswer);
-
 
 const questions = [
   {
@@ -177,17 +178,19 @@ const questions = [
 ];
 
 function load() {
-  triviaBox.innerHTML =
-    currentQuestion + 1 + '. ' + questions[currentQuestion].q;
-  opt1.innerHTML = questions[currentQuestion].options[0];
-  opt2.innerHTML = questions[currentQuestion].options[1];
-  opt3.innerHTML = questions[currentQuestion].options[2];
-  opt4.innerHTML = questions[currentQuestion].options[3];
-  opt1.style.backgroundColor = 'white';
-  opt2.style.backgroundColor = 'white';
-  opt3.style.backgroundColor = 'white';
-  opt4.style.backgroundColor = 'white';
-};
+  if (currentQuestion < questions.length) {
+    triviaBox.innerHTML =
+      currentQuestion + 1 + '. ' + questions[currentQuestion].q;
+    opt1.innerHTML = questions[currentQuestion].options[0];
+    opt2.innerHTML = questions[currentQuestion].options[1];
+    opt3.innerHTML = questions[currentQuestion].options[2];
+    opt4.innerHTML = questions[currentQuestion].options[3];
+    opt1.style.backgroundColor = 'white';
+    opt2.style.backgroundColor = 'white';
+    opt3.style.backgroundColor = 'white';
+    opt4.style.backgroundColor = 'white';
+  }
+}
 
 load();
 
@@ -195,25 +198,28 @@ function next() {
   currentQuestion++;
   load();
   isQuestionAnswered = false;
+  checkScore();
+}
 
-};
+function checkScore() {
+  if (currentQuestion === questions.length) {
+    document.querySelector('.finalScore').innerText = score;
+  }
+  console.log(currentQuestion);
+}
 
 function checkAnswer(evt) {
   if (isQuestionAnswered === false) {
-    let question = questions[currentQuestion]; {
-        if (evt.target.id === question.answer) {
-          evt.target.style.backgroundColor = '#00ff00'; 
-          score += 1;
-          document.querySelector('#scoreCard').innerText = score;
-          // alert('correct');
-    } else {
-          evt.target.style.backgroundColor = '#ff5050';
-        // alert('Try Again');
-    };
-    isQuestionAnswered = true;
+    let question = questions[currentQuestion];
+    {
+      if (evt.target.id === question.answer) {
+        evt.target.style.backgroundColor = '#00ff00';
+        score += 10;
+        document.querySelector('#scoreCard').innerText = score;
+      } else {
+        evt.target.style.backgroundColor = '#ff5050';
+      }
+      isQuestionAnswered = true;
+    }
   }
 }
-  // console.log(evt.target.id === question.answer);
-};
-
-
