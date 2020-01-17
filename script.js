@@ -1,19 +1,15 @@
 const li = document.getElementById('li');
-
 const ul = document.getElementById('ul');
-
 const button = document.getElementById('next');
-
 const triviaBox = document.getElementById('questionBox');
-
-let currentQuestion = 0;
-
-let score = 0;
-
-let isQuestionAnswered = false;
-
 let totalScore = document.querySelector('.finalScore');
 
+let currentQuestion = 0;
+let score = 0;
+let isQuestionAnswered = false;
+
+// Consider using a wrapper so you can propagate your event listeners to all items without having to hard code each item
+// Add comments to make sure you and other developers know what each function or group of logic does. You'll be surprised how quickly you forgot.
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
@@ -181,6 +177,7 @@ function load() {
   if (currentQuestion < questions.length) {
     triviaBox.innerHTML =
       currentQuestion + 1 + '. ' + questions[currentQuestion].q;
+    // Look at doing this iteratively rather than hard coding to make DRY
     opt1.innerHTML = questions[currentQuestion].options[0];
     opt2.innerHTML = questions[currentQuestion].options[1];
     opt3.innerHTML = questions[currentQuestion].options[2];
@@ -211,15 +208,14 @@ function checkScore() {
 function checkAnswer(evt) {
   if (isQuestionAnswered === false) {
     let question = questions[currentQuestion];
-    {
-      if (evt.target.id === question.answer) {
-        evt.target.style.backgroundColor = '#00ff00';
-        score += 10;
-        document.querySelector('#scoreCard').innerText = score;
-      } else {
-        evt.target.style.backgroundColor = '#ff5050';
-      }
-      isQuestionAnswered = true;
+
+    if (evt.target.id === question.answer) {
+      evt.target.style.backgroundColor = '#00ff00';
+      score += 10;
+      document.querySelector('#scoreCard').innerText = score;
+    } else {
+      evt.target.style.backgroundColor = '#ff5050';
     }
+    isQuestionAnswered = true;
   }
 }

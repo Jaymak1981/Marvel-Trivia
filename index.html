@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Marvel Trivia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Removed extra spaces and used Prettier to tidy up your indentations to make code easier to read. 
+        Removed unused and commented out code. -->
+    <!-- Use semantic HTML tags to clarify parts of your content (ex. main, nav, aside). 
+        They work the same as div, but will make it easier to read and improves SEO. -->
     <h1>Marvel Trivia</h1>
     <div class="trivia_wrapper">
-        <h2 class="finalScore"></h2>
-        <div class="question" id="questionBox"></div>
+      <h2 class="finalScore"></h2>
+      <div class="question" id="questionBox"></div>
 
-        <div class="options">
-            <ul id="ul">
-                <!-- <div id="li"> -->
-                <li id="opt1"></li>
-                <li id="opt2"></li>
-                <li id="opt3"></li>
-                <li id="opt4"></li>
-                <!-- </div> -->
-            </ul>
+      <div class="options">
+        <ul id="ul">
+          <li id="opt1"></li>
+          <li id="opt2"></li>
+          <li id="opt3"></li>
+          <li id="opt4"></li>
+        </ul>
+      </div>
 
-        
-    </div>
-
-       <div class="score">
-            <div>
-                <button type="button" id="next">Next</button>
+      <div class="score">
+        <div>
+          <button type="button" id="next">Next</button>
         </div>
-        <div class="score-card">
-            Score : <span id="scoreCard">0</span>
-        </div>
+        <div class="score-card">Score : <span id="scoreCard">0</span></div>
+      </div>
     </div>
-</div>
-
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
