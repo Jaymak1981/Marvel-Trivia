@@ -1,3 +1,4 @@
+//  add all const
 const li = document.getElementById('li');
 
 const ul = document.getElementById('ul');
@@ -6,25 +7,32 @@ const button = document.getElementById('next');
 
 const triviaBox = document.getElementById('questionBox');
 
+//  add variable to start the first question 
 let currentQuestion = 0;
 
+//  add variable to start the score at zero
 let score = 0;
 
+//  add variable to make sure question is answered
 let isQuestionAnswered = false;
 
+//  add variable to total the score 
 let totalScore = document.querySelector('.finalScore');
 
+//  create variables for each option
 let opt1 = document.getElementById('opt1');
 let opt2 = document.getElementById('opt2');
 let opt3 = document.getElementById('opt3');
 let opt4 = document.getElementById('opt4');
 
+// add event listeners
 button.addEventListener('click', next);
 opt1.addEventListener('click', checkAnswer);
 opt2.addEventListener('click', checkAnswer);
 opt3.addEventListener('click', checkAnswer);
 opt4.addEventListener('click', checkAnswer);
 
+//  add questions and answers
 const questions = [
   {
     q: 'What does MCU stand for?',
@@ -177,6 +185,7 @@ const questions = [
   }
 ];
 
+// create a function to move to the next question when current question is answered
 function load() {
   if (currentQuestion < questions.length) {
     triviaBox.innerHTML =
@@ -185,6 +194,7 @@ function load() {
     opt2.innerHTML = questions[currentQuestion].options[1];
     opt3.innerHTML = questions[currentQuestion].options[2];
     opt4.innerHTML = questions[currentQuestion].options[3];
+    // create a way to keep the background color of the options white unless answered correct
     opt1.style.backgroundColor = 'white';
     opt2.style.backgroundColor = 'white';
     opt3.style.backgroundColor = 'white';
@@ -194,6 +204,8 @@ function load() {
 
 load();
 
+
+// create a function move to the next question after current question is answered
 function next() {
   currentQuestion++;
   load();
@@ -201,20 +213,22 @@ function next() {
   checkScore();
 }
 
-function checkScore() {
-  if (currentQuestion === questions.length) {
-    document.querySelector('.finalScore').innerText = score;
-  }
-  console.log(currentQuestion);
-}
+// add a function to tally final score (under construction)
+// function checkScore() {
+//   if (currentQuestion === questions.length) {
+//     document.querySelector('.finalScore').innerText = score;
+//   }
+// }
 
+
+// add a function to work that if the question is answered correct that option turns green otherwise it turns red
 function checkAnswer(evt) {
   if (isQuestionAnswered === false) {
     let question = questions[currentQuestion];
     {
       if (evt.target.id === question.answer) {
         evt.target.style.backgroundColor = '#00ff00';
-        score += 10;
+        score += 1;
         document.querySelector('#scoreCard').innerText = score;
       } else {
         evt.target.style.backgroundColor = '#ff5050';

@@ -4,7 +4,9 @@
 
 
 ### Project Preview...
+![Uploading Screen Shot 2020-01-16 at 22.35.35.png…]()
 
+### The link to the game can be found here  https://jaymak1981.github.io/Marvel-Trivia/ 
 
 ### About this Game...
 The Marvel Cinematic Universe is a shared universe created by Marvel Studios, set primarily in the reality designated as Earth-199999 within Marvel's multiverse system. Starting with Iron Man, the universe is comprised mainly of films independently made by Marvel Studios, that are always set within this same universe, much like Marvel has done with their comics.
@@ -16,3 +18,7 @@ You will find HTML5, CSS and JavaScript have all been used in this project. HTML
 
 ### User Stories...
 The user starts answering questions on their knowledge of The Marvel Universe
+
+### Future Additions
+To add and end page with the final score and different pictures if you win or lose.
+If the player loses then give the option to play again
